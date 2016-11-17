@@ -41,38 +41,38 @@ public class UserTemplate extends AbstractInstagramOperations implements UserOpe
 
 	@Override
 	@Deprecated
-	public PagedMediaList getFeed(long maxId, long minId) {
+	public PagedMediaList getFeed(String maxId, String minId) {
 		requireUserAuthorization();
 		return getRecentMedia(maxId, minId);
 	}
 
 	@Override
 	public PagedMediaList getRecentMedia() {
-		return getRecentMedia(0, 0);
+		return getRecentMedia(null, null);
 	}
 
 	@Override
-	public PagedMediaList getRecentMedia(long maxId, long minId) {
+	public PagedMediaList getRecentMedia(String maxId, String minId) {
 		Map<String, String> params = new HashMap<String, String>();
-		if (maxId > 0)
-			params.put("max_id", Long.toString(maxId));
-		if (minId > 0)
-			params.put("min_id", Long.toString(minId));
+		if (maxId != null)
+			params.put("max_id", maxId);
+		if (minId != null)
+			params.put("min_id", minId);
 		return get(buildUri(USERS_ENDPOINT + "self/media/recent/", params), PagedMediaList.class);
 	}
 
 	@Override
 	public PagedMediaList getRecentMedia(long userId) {
-		return getRecentMedia(userId, 0, 0);
+		return getRecentMedia(userId, null, null);
 	}
 
 	@Override
-	public PagedMediaList getRecentMedia(long userId, long maxId, long minId) {
+	public PagedMediaList getRecentMedia(long userId, String maxId, String minId) {
 		Map<String, String> params = new HashMap<String, String>();
-		if (maxId > 0)
-			params.put("max_id", Long.toString(maxId));
-		if (minId > 0)
-			params.put("min_id", Long.toString(minId));
+		if (maxId != null)
+			params.put("max_id", maxId);
+		if (minId != null)
+			params.put("min_id", minId);
 		return get(buildUri(USERS_ENDPOINT + Long.toString(userId) + "/media/recent/", params), PagedMediaList.class);
 	}
 

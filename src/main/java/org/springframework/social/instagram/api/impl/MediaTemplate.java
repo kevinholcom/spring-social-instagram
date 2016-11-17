@@ -21,44 +21,44 @@ public class MediaTemplate extends AbstractInstagramOperations implements MediaO
 	}
 
 	@Override
-	public void addComment(long mediaId, String text) {
+	public void addComment(String mediaId, String text) {
 		requireUserAuthorization();
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
 		params.add("text", text);
-		post(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/comments/"), params, Map.class);
+		post(buildUri(MEDIA_ENDPOINT + mediaId + "/comments/"), params, Map.class);
 	}
 
 	@Override
-	public void addLike(long mediaId) {
+	public void addLike(String mediaId) {
 		requireUserAuthorization();
-		post(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/likes/"), new LinkedMultiValueMap<String, String>(), Map.class);
+		post(buildUri(MEDIA_ENDPOINT + mediaId + "/likes/"), new LinkedMultiValueMap<String, String>(), Map.class);
 	}
 
 	@Override
-	public void deleteComment(long mediaId, long commentId) {
+	public void deleteComment(String mediaId, long commentId) {
 		requireUserAuthorization();
-		delete(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/comments/" + Long.toString(commentId) + "/"));
+		delete(buildUri(MEDIA_ENDPOINT + mediaId + "/comments/" + Long.toString(commentId) + "/"));
 	}
 
 	@Override
-	public void deleteLike(long mediaId) {
+	public void deleteLike(String mediaId) {
 		requireUserAuthorization();
-		delete(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/likes/"));
+		delete(buildUri(MEDIA_ENDPOINT + mediaId + "/likes/"));
 	}
 
 	@Override
-	public List<Comment> getComments(long mediaId) {
-		return get(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/comments/"), CommentList.class).getList();
+	public List<Comment> getComments(String mediaId) {
+		return get(buildUri(MEDIA_ENDPOINT + mediaId + "/comments/"), CommentList.class).getList();
 	}
 
 	@Override
-	public List<InstagramProfile> getLikes(long mediaId) {
-		return get(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/likes/"), InstagramProfileList.class).getList();
+	public List<InstagramProfile> getLikes(String mediaId) {
+		return get(buildUri(MEDIA_ENDPOINT + mediaId + "/likes/"), InstagramProfileList.class).getList();
 	}
 
 	@Override
-	public Media getMedia(long mediaId) {
-		return get(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/"), MediaContainer.class).getObject();
+	public Media getMedia(String mediaId) {
+		return get(buildUri(MEDIA_ENDPOINT + mediaId + "/"), MediaContainer.class).getObject();
 	}
 
 	@Override

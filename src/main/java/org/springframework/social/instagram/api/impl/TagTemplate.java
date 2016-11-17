@@ -23,15 +23,15 @@ public class TagTemplate extends AbstractInstagramOperations implements TagOpera
 	}
 
 	public PagedMediaList getRecentMedia(String tagName) {
-		return getRecentMedia(tagName, 0, 0);
+		return getRecentMedia(tagName, null, null);
 	}
 
-	public PagedMediaList getRecentMedia(String tagName, long maxId, long minId) {
+	public PagedMediaList getRecentMedia(String tagName, String maxId, String minId) {
 		Map<String, String> params = new HashMap<String, String>();
-		if (maxId > 0)
-			params.put("max_id", Long.toString(maxId));
-		if (minId > 0)
-			params.put("min_id", Long.toString(minId));
+		if (maxId != null)
+			params.put("max_id", maxId);
+		if (minId != null)
+			params.put("min_id", minId);
 		return get(buildUri(TAGS_ENDPOINT + tagName + "/media/recent/", params), PagedMediaList.class);
 	}
 

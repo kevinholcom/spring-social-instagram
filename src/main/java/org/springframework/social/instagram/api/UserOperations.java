@@ -46,7 +46,7 @@ public interface UserOperations {
 	 * @deprecated use getRecentMedia
 	 */
 	@Deprecated
-	PagedMediaList getFeed(long maxId, long minId);
+	PagedMediaList getFeed(String maxId, String minId);
 
 	/**
 	 * Get recent media of a current user
@@ -64,7 +64,7 @@ public interface UserOperations {
 	 *            Get media after this ID
 	 * @return List of media
 	 */
-	PagedMediaList getRecentMedia(long maxId, long minId);
+	PagedMediaList getRecentMedia(String maxId, String minId);
 
 	/**
 	 * Get recent media of a specific user
@@ -86,7 +86,7 @@ public interface UserOperations {
 	 *            Get media after this ID
 	 * @return List of media
 	 */
-	PagedMediaList getRecentMedia(long userId, long maxId, long minId);
+	PagedMediaList getRecentMedia(long userId, String maxId, String minId);
 
 	/**
 	 * Search for users

@@ -23,15 +23,15 @@ public class LocationTemplate extends AbstractInstagramOperations implements Loc
 	}
 
 	public PagedMediaList getRecentMedia(long locationId) {
-		return getRecentMedia(locationId, 0, 0, 0, 0);
+		return getRecentMedia(locationId, null, null, 0, 0);
 	}
 
-	public PagedMediaList getRecentMedia(long locationId, long maxId, long minId, long minTimeStamp, long maxTimeStamp) {
+	public PagedMediaList getRecentMedia(long locationId, String maxId, String minId, long minTimeStamp, long maxTimeStamp) {
 		Map<String, String> params = new HashMap<String, String>();
-		if (maxId > 0)
-			params.put("max_id", Long.toString(maxId));
-		if (minId > 0)
-			params.put("min_id", Long.toString(minId));
+		if (maxId != null)
+			params.put("max_id", maxId);
+		if (minId != null)
+			params.put("min_id", minId);
 		if (minTimeStamp > 0)
 			params.put("min_timestamp", Long.toString(minTimeStamp));
 		if (maxTimeStamp > 0)

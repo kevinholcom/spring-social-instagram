@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>Instagram API</name>
-    <url>https://github.com/kevinholcom/spring-social-instagram/</url>
+    <url>https://github.com/gurkein/spring-social-instagram/</url>
 
     <properties>
         <jackson.version>2.5.1</jackson.version>
@@ -79,7 +79,7 @@
                         <include>**/*</include>
                     </includes>
                     <repositoryName>spring-social-instagram</repositoryName>        <!-- github repo name -->
-                    <repositoryOwner>kevinholcom</repositoryOwner>                  <!-- github username -->
+                    <repositoryOwner>gurkein</repositoryOwner>                  <!-- github username -->
                 </configuration>
                 <executions>
                     <!-- run site-maven-plugin's 'site' target as part of 

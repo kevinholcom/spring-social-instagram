@@ -1,6 +1,8 @@
 package org.springframework.social.instagram.api;
 
-public class Image {
+import java.io.Serializable;
+
+public class Image implements Serializable {
 
 	public static final String LOW_RESOLUTION = "low_resolution";
 	public static final String THUMBNAIL = "thumbnail";

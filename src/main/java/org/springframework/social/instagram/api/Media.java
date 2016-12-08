@@ -1,12 +1,13 @@
 package org.springframework.social.instagram.api;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Media {
+public class Media implements Serializable {
 
 	public static final String VIDEO = "video";
 	public static final String IMAGE = "image";

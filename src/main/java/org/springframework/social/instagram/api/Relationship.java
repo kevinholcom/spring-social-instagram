@@ -1,6 +1,8 @@
 package org.springframework.social.instagram.api;
 
-public class Relationship {
+import java.io.Serializable;
+
+public class Relationship implements Serializable {
 
 	private OutgoingStatus outgoingStatus;
 	private IncomingStatus incomingStatus;

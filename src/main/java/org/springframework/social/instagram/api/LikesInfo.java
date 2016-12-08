@@ -1,8 +1,9 @@
 package org.springframework.social.instagram.api;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class LikesInfo {
+public class LikesInfo implements Serializable {
 
 	private int total;
 	private List<InstagramProfile> list;

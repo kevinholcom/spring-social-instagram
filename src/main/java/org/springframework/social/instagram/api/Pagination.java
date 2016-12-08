@@ -2,7 +2,9 @@ package org.springframework.social.instagram.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Pagination {
+import java.io.Serializable;
+
+public class Pagination implements Serializable {
 
     @JsonProperty("next_url")
 	private String nextUrl;

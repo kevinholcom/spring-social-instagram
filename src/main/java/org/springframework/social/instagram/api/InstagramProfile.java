@@ -1,11 +1,12 @@
 package org.springframework.social.instagram.api;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class InstagramProfile {
+public class InstagramProfile implements Serializable {
 
 	private long id;
 	@JsonProperty("profile_picture")

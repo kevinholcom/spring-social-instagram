@@ -1,10 +1,11 @@
 package org.springframework.social.instagram.api;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Caption {
+public class Caption implements Serializable {
 
 	private long id;
 	@JsonProperty("created_time")

@@ -1,6 +1,8 @@
 package org.springframework.social.instagram.api;
 
-public class Location {
+import java.io.Serializable;
+
+public class Location implements Serializable {
 
 	private long id;
 	private String name;

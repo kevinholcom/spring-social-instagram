@@ -2,7 +2,7 @@
 
 To check out the project and build from source, do the following:
 
-    git clone https://github.com/kevinholcom/spring-social-instagram.git
+    git clone https://github.com/gurkein/spring-social-instagram.git
     cd spring-social-instagram
     mvn clean install
 

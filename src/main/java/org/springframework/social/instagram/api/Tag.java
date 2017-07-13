@@ -1,6 +1,8 @@
 package org.springframework.social.instagram.api;
 
-public class Tag {
+import java.io.Serializable;
+
+public class Tag implements Serializable {
 
 	private int mediaCount;
 	private String name;

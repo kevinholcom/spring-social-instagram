@@ -10,14 +10,14 @@ public interface MediaOperations {
 	 * @param mediaId media ID
 	 * @param text text
 	 */
-	void addComment(long mediaId, String text);
+	void addComment(String mediaId, String text);
 
 	/**
 	 * Set a like on this media by the currently authenticated user.
 	 * 
 	 * @param mediaId media ID
 	 */
-	void addLike(long mediaId);
+	void addLike(String mediaId);
 
 	/**
 	 * Remove a comment either on the authenticated user's media or authored by the authenticated user.
@@ -25,14 +25,14 @@ public interface MediaOperations {
 	 * @param mediaId media ID
 	 * @param commentId comment ID
 	 */
-	void deleteComment(long mediaId, long commentId);
+	void deleteComment(String mediaId, long commentId);
 
 	/**
 	 * Remove a like on this media by the currently authenticated user.
 	 * 
 	 * @param mediaId media ID
 	 */
-	void deleteLike(long mediaId);
+	void deleteLike(String mediaId);
 
 	/**
 	 * Get a full list of comments on a media.
@@ -40,7 +40,7 @@ public interface MediaOperations {
 	 * @param mediaId media ID
 	 * @return A list of comments
 	 */
-	List<Comment> getComments(long mediaId);
+	List<Comment> getComments(String mediaId);
 
 	/**
 	 * Get a list of users who have liked this media.
@@ -48,7 +48,7 @@ public interface MediaOperations {
 	 * @param mediaId media ID
 	 * @return A list of users
 	 */
-	List<InstagramProfile> getLikes(long mediaId);
+	List<InstagramProfile> getLikes(String mediaId);
 
 	/**
 	 * Get information about a media object.
@@ -56,7 +56,7 @@ public interface MediaOperations {
 	 * @param mediaId media ID
 	 * @return Media information
 	 */
-	Media getMedia(long mediaId);
+	Media getMedia(String mediaId);
 
 	/**
 	 * Get a list of what media is most popular at the moment.

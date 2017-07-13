@@ -1,8 +1,9 @@
 package org.springframework.social.instagram.api;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PagedMediaList {
+public class PagedMediaList implements Serializable {
 
 	private final List<Media> list;
 	private final Pagination pagination;

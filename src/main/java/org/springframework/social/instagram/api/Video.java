@@ -1,6 +1,8 @@
 package org.springframework.social.instagram.api;
 
-public class Video {
+import java.io.Serializable;
+
+public class Video implements Serializable {
 
 	public static final String LOW_RESOLUTION = "low_resolution";
 	public static final String LOW_BANDWIDTH = "low_bandwidth";

@@ -37,7 +37,7 @@ public interface LocationOperations {
 	 *            Will return media before this UNIX time stamp
 	 * @return A list of media
 	 */
-	PagedMediaList getRecentMedia(long locationId, long maxId, long minId, long minTimeStamp, long maxTimeStamp);
+	PagedMediaList getRecentMedia(long locationId, String maxId, String minId, long minTimeStamp, long maxTimeStamp);
 
 	/**
 	 * Search for a location by geographic coordinate using default distance of 1000 meters.

@@ -10,3 +10,4 @@ spring-social-core/src/test/java/exploration
 **/bin
 /target/
 .idea
+*.iml
